@@ -21,7 +21,7 @@ locals {
 
 # Look up ADs in the tenancy
 data "oci_identity_availability_domains" "ads" {
-  compartment_id = var.tenancy_id          # tenancy OCID
+  compartment_id = "ocid1.tenancy.oc1..aaaaaaaaclenjvfd4xb37sr5mcduaygjpiklltchacalt2a3en2ay7m6wkiq"          # tenancy OCID
 }
 
 output "id" {

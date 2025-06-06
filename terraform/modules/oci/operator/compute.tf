@@ -17,7 +17,7 @@ data "oci_identity_availability_domains" "ads" {
 
 resource "oci_core_instance" "operator" {
   availability_domain                 = local.ad_selected
-  compartment_id                      = var.compartment_id
+  compartment_id                      = "ocid1.compartment.oc1..aaaaaaaahbjlebsb4qihzdjrpx5jzesovw663x6dbbgrw57gaqiig7jtxtua"
   display_name                        = "operator-${var.state_id}"
   defined_tags                        = var.defined_tags
   freeform_tags                       = var.freeform_tags
