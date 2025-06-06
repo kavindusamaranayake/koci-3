@@ -1,0 +1,62 @@
+# Minimal placeholder – replace with real NSG module invocations
+# The variables injected from the templatefile() call are available here:
+#   env_name, compartment_id, vcn_id, vcn_cidr_block, …
+terraform {
+  required_version = ">= 1.6.0"
+}
+
+# --------------------------------------------------------------------------- #
+# NSGs generated from Terragrunt locals                                       #
+# --------------------------------------------------------------------------- #
+
+# --- K8s NSG ---
+module "k8s_nsg" {
+  source         = "${module_base_path}"
+  name           = "k8s"
+  # --- QUOTED string variables ---
+  env_name       = "${env_name}"
+  compartment_id = "${compartment_id}"
+  vcn_id         = "${vcn_id}"
+  # --- END QUOTED ---
+  # --- Use jsonencode() for complex list variable ---
+  rules          = ${jsonencode(k8s_rules)}
+}
+
+# --- Load Balancer NSG ---
+module "lb_nsg" {
+  source         = "${module_base_path}"
+  name           = "lb"
+  # --- QUOTED string variables ---
+  env_name       = "${env_name}"
+  compartment_id = "${compartment_id}"
+  vcn_id         = "${vcn_id}"
+  # --- END QUOTED ---
+  # --- Use jsonencode() for complex list variable ---
+  rules          = ${jsonencode(lb_rules)}
+}
+
+# --- MySQL NSG ---
+module "mysql_nsg" {
+  source         = "${module_base_path}"
+  name           = "mysql"
+  # --- QUOTED string variables ---
+  env_name       = "${env_name}"
+  compartment_id = "${compartment_id}"
+  vcn_id         = "${vcn_id}"
+  # --- END QUOTED ---
+  # --- Use jsonencode() for complex list variable ---
+  rules          = ${jsonencode(mysql_rules)}
+}
+
+# --- Bastion NSG ---
+module "bastion_nsg" {
+  source         = "${module_base_path}"
+  name           = "bastion"
+  # --- QUOTED string variables ---
+  env_name       = "${env_name}"
+  compartment_id = "${compartment_id}"
+  vcn_id         = "${vcn_id}"
+  # --- END QUOTED ---
+  # --- Use jsonencode() for complex list variable ---
+  rules          = ${jsonencode(bastion_rules)}
+} 
