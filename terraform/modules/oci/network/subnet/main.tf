@@ -1,5 +1,5 @@
 data "oci_identity_availability_domains" "all" {
-  compartment_id = var.tenancy_ocid
+  compartment_id = "ocid1.tenancy.oc1..aaaaaaaaclenjvfd4xb37sr5mcduaygjpiklltchacalt2a3en2ay7m6wkiq"
 }
 
 # ------------------------------------------------------------------
