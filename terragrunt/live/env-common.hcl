@@ -9,7 +9,7 @@
 
 locals {
   root_config = read_terragrunt_config(find_in_parent_folders("root.hcl"))
-  root_dir    = dirname(find_in_parent_folders("root.hcll"))
+  root_dir    = dirname(find_in_parent_folders("root.hcl"))
 
   name_prefix  = "koci"     
 

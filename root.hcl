@@ -145,18 +145,61 @@ KEY
 # ---------------------------------------------------------------------------
 # Inject OCI provider - Uses safe locals (placeholders during init)
 # ---------------------------------------------------------------------------
+# generate "oci_provider" {
+#   path      = "provider.tf"
+#   if_exists = "overwrite_terragrunt"
+#   contents  = <<EOF
+# provider "oci" {
+#   tenancy_ocid = "${local.tenancy_ocid}"
+#   user_ocid    = "${local.user_ocid}"
+#   fingerprint  = "${local.fingerprint}"
+#   private_key  = <<KEY
+# ${local.private_key}
+# KEY
+#   region       = "${local.region}"
+# }
+# EOF
+# }
+
 generate "oci_provider" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 provider "oci" {
-  tenancy_ocid = "${local.tenancy_ocid}"
-  user_ocid    = "${local.user_ocid}"
-  fingerprint  = "${local.fingerprint}"
+  tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaaclenjvfd4xb37sr5mcduaygjpiklltchacalt2a3en2ay7m6wkiq"
+  user_ocid    = "ocid1.user.oc1..aaaaaaaa5j6ljhi454az6v6cgjfhfhjgbev3sn32obdek2w62ac4omhvkdjq"
+  fingerprint  = "8c:7c:56:af:65:de:84:a9:8f:80:ef:21:f6:6e:54:eb"
   private_key  = <<KEY
-${local.private_key}
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCOHXLO2PMSNZYn
+xQzkzg3AZBHUlTka1PtDxh+jDe7treyqW2GdgLDnqAyfX6XK0fmKZ1rhENl5JWZx
+D2K9JbwcaqNX2GACPnIy9XLHecl7PNtrvPAY8uW1VhsaK/dNLcQ2S6Nj3NgghfOw
+X1NZCqT5f33dIYfM9aFmv9UEb4V+hT97qliFEpPb5ud3opWl2dFf/vKHxC9aGhF3
+OBOAc9qjJQHsTBjI8epE9G2USdt5wrtm+OotCzfQdvOhQFqX25RlfPRuNuAX17o1
+SPPYN1WLXF2X3LHEql5rHmBASDrH3ZQXyebr87jF+rsWSL+V4ZQVYmrSy+hS9sIW
+LeGL72clAgMBAAECggEAG1TWi6l1tf7QTf27qRVn16RnOXcpcFudpz8nPnijhtp4
+NZs1ftENNMBBDTWb8RHI6DFQbRCMgpwKw5ut5aqoLt7jYzWd4VCZLeu+k1Z8xVLC
+8El585JjUyioNbRW72Tp43dQiRgkCL06TKVIpktBxyoZzrlwIJ7s15H1KdE430f/
+ruKquBOqwuwLCMxEH+LsOP8b/dTxHTYV7Bp+7vgP/01HZRAmGd2NBwtm7mAqXBGC
+CAiMQBnLZkXZIVRwwokKkZ+gqru6tJqtVYTNTGlqQk02ArMKM4FIjM4vp9GAPb//
+XEoCiP1NWjIui7wqA4AN6pSHSij7UwFU0DvI0JD0AQKBgQDF6n3X286juMmhBF7q
+h3P9oUNIgTBBS6WHBNZLi0COpA+CC11ihTazHWP4t6Jda1eMzAVZoCmOapcXNN/F
+RqV7+C6qHSAhGIXxx6pibC2mhxLv1qdHMzLFmNvvLf5kEIAb6tcf9NS0cLcF2b3Z
+u6owrxtetl3BbvH1cMwVtoiqwQKBgQC30pvbB7Qo38mN2MCaYR5UhL0GdlnH0/nM
+dCksbUyqfwR2+bie00vu/2vGeeE98zRhg5T9pdz1r0syUKQiyK9KA1Gn8XTg81k3
+z1AHcenc7OY5MQ90/z0E1V9a7q4XugqT9ImCQNAU1fbq0ZIDBp1m67Y7gMLb++Qk
+mf7moxNJZQKBgFQjRQ6ARo+5nhYSupsvrHLVnLn1GeOYWi1VNBj3gSFiw6kAVdnt
+UfzBcN+qiZ73ZEfZ8ChS+3es/sCB3OOMDgvuzT/Kk/8d4suPm3KuFJYn9Df75C9T
+p7DzNASxY+V8UkoMAxp1xftTs6sMDzbCHi8GMjeIhcEW/kvegRR1/hHBAoGAJNPz
+Gby/YXkEXoDQhZ1zgCdf342SizBy2X1kSlxTgc0UzelWDavziJxvsUH12H2DPw4n
+qXGzhR1riVcSq01doQxtLaJ4ciEO/NlyBSvTWMm1jjvABwaj6PX+tq8e/e3t9JqH
+eisWBTag04bNJAINQvNyfRVc9MnQeWzI3thJIukCgYEAwO5+qdqLkQ3SArLD2yQv
+okM30ppC4Or0GFTxTEuRIKD8gNKuRFaiOz87JASX8wcXkkR5JW1a8g0X3IzgLGVM
+MIiDxCwo049NBeooFmoMuNIRsmXLn/FjyQc4Wrtom3BJeFEcR/XsCwT9hIgXxO7X
+v9IDCjzkaH2ZrLIHyNuFxHY=
+-----END PRIVATE KEY-----
 KEY
-  region       = "${local.region}"
+  region       = "ca-montreal-1"
 }
 EOF
 }
