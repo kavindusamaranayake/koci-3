@@ -11,7 +11,7 @@ variable "doppler_project" { type = string }
 
 variable "parent_compartment_ocid" {
   type    = string
-  default = ""                       
+  default = "ocid1.compartment.oc1..aaaaaaaahbjlebsb4qihzdjrpx5jzesovw663x6dbbgrw57gaqiig7jtxtua"                       
 }
 
 variable "kms_key_id" {

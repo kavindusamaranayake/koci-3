@@ -65,7 +65,7 @@ locals {
   # 2. Define final values with fallbacks using coalesce (will use placeholders during init)
   compartment_ocid = coalesce(
     local._raw_compartment_ocid,
-    "ocid1.compartment.oc1..aaaaaaaajklnsyhmjt2tem4opqeqxv5n3njn5u5t6v6khiph3if5uso6pfoa"
+    "ocid1.compartment.oc1..aaaaaaaahbjlebsb4qihzdjrpx5jzesovw663x6dbbgrw57gaqiig7jtxtua"
   )
   tenancy_ocid = coalesce(local._raw_tenancy_ocid, "ocid1.tenancy.oc1..aaaaaaaauasokfuusmntkiyr3xqynfsvazqxr6s6lyj3swfbu7u6pdnra6aq")
   region = coalesce(local._raw_region, "ca-montreal-1")

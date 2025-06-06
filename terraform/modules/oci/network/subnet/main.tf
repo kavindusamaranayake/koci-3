@@ -92,7 +92,7 @@ module "rt" {
 # --- Log Group for Flow Logs ---
 resource "oci_logging_log_group" "subnet_log_group" {
     count = var.create_log_group ? 1 : 0
-    compartment_id = var.compartment_id
+    compartment_id = "ocid1.compartment.oc1..aaaaaaaahbjlebsb4qihzdjrpx5jzesovw663x6dbbgrw57gaqiig7jtxtua"
     display_name   = "${var.name}-log-group"
     description    = "Log group for subnet flow logs"
 }
